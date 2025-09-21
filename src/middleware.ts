@@ -39,9 +39,7 @@ export async function middleware(request: NextRequest) {
 // so we have to use the matcher to specify the routes we want to protect
 export const config = {
   matcher: [
-    "/",
-    "/login",
-    "/register",
+ 
     "/brands/:path*",
     "/products/:path*",
     "/categories/:path*",
