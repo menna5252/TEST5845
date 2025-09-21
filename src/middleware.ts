@@ -32,14 +32,12 @@ export async function middleware(request: NextRequest) {
   if (!token && protectedRoutes.includes(pathname)) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
-  NextResponse.next()
 
 }
 
 // so we have to use the matcher to specify the routes we want to protect
 export const config = {
   matcher: [
-    "/",
     "/brands/:path*",
     "/products/:path*",
     "/categories/:path*",
