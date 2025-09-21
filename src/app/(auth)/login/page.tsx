@@ -42,7 +42,7 @@ const Login = () => {
       const res = await signIn("credentials", {
         email: data.email,
         password: data.password,
-        redirect: true,
+        redirect: false,
         callbackUrl: "/",
       });
 
@@ -53,6 +53,7 @@ const Login = () => {
         console.log(res?.url);
         
         router.push(res?.url || "/");
+        router.refresh()
       } else {
         toast.error(res?.error || "Something went wrong", {
           position: "top-center",
