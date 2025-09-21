@@ -33,7 +33,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
-  
+  return NextResponse.next()
 }
 
 // so we have to use the matcher to specify the routes we want to protect
